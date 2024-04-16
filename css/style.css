@@ -110,16 +110,20 @@ body {
 /* Marcas de imagem */
 .brand-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .brand-item {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row; /* Alterado para linha para alinhar imagem e texto horizontalmente */
     justify-content: center;
+    width: 30%;
     transition: background-color 0.3s ease;
+    margin: auto;
+    text-align: center;
+    position: relative;
 }
 
 .brand-item:hover {
@@ -127,29 +131,24 @@ body {
 }
 
 .brand-container img {
-    width: 25%
+    width: 25%;
+    margin-right: 10px; /* Adiciona uma pequena margem à direita da imagem */
 }
 
 .brand-label {
     font-size: 30px;
-    margin-left: 20px;
     color: var(--color-secondary);
 }
 
-.centered-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 /* Estilos para a imagem de sobreposição */
 .overlay-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -196,7 +195,43 @@ body {
     }
 
     .brand-container img {
-        width: 35%;
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo img {
+        height: 25%;
+        width: 25%;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar a {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    .brand-container {
+        flex-direction: row;
+    }
+
+    .brand-item {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .brand-container img {
+        width: 55%;
     }
 }
 
@@ -204,36 +239,45 @@ body {
 
 @media (min-width: 1700px) {
     .overlay-image {
-        width: 300%;
-        left: -130%;
+        width: 100%;
+        left: 22%;
+        top: 45%;
+        transform: translate(-50%, -50%);
     }
 }
-
 
 @media (max-width: 1200px) {
     .overlay-image {
         width: 250%;
-        left: -75%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 @media (max-width: 992px) {
     .overlay-image {
         width: 250%;
-        left: -75%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 @media (max-width: 768px) {
     .overlay-image {
         width: 250%;
-        left: -75%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 @media (max-width: 600px) {
     .overlay-image {
         width: 250%;
-        left: -75%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
