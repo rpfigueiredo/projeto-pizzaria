@@ -9,49 +9,63 @@
   <meta name="keywords" content="Pizzaria, Esfihas, Sobremesas">
   <meta name="author" content="Rodrigo Prado Figueiredo">
   <meta name="robots" content="index, follow">
-  <title>Prado's Pizzaria</title>
+  <title>Prado's Pizza</title>
+  <link rel="icon" href="assets/midia/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
-
   <header class="header">
-    <a href="#" class="logo">
-      <img src="assets/midia/logo.png" alt="Logo">
-    </a>
-    <nav class="navbar">
-      <a href="#" class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
+    <nav class="nav">
+      <a href="/" class="logo">
+        <img src="assets/midia/logo.png" alt="Prado's Pizza">
       </a>
+      <ul class="nav-list">
+        <li><a href="#"><i class="fas fa-utensils"></i>CARDÁPIO</a></li>
+        <li><a href="#"><i class="fas fa-pizza-slice"></i>MONTE SUA PIZZA</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i>RESERVA</a></li>
+        <li><a href="#"><i class="fas fa-address-book"></i>CONTATO</a></li>
+      </ul>
+      <div class="icons">
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <button class="hamburger"></button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="banner">
       <div class="video-container">
-        <video id="myVideo" src="assets/midia/grande.mp4" autoplay muted loop>
+        <video id="myVideo" src="assets/midia/grande.mp4" autoplay muted loop playsinline>
           Seu navegador não suporta a tag de vídeo.
-        </video>        
-        <img id="myImage" class="overlay-image" src="assets/midia/grande.svg">
+        </video>
+        <img id="myImage" class="overlay-image" src="assets/midia/text-benner.svg">
       </div>
     </section>
-    
+
     <!-- Produtos disponiveis -->
-    <section class="brand-container">
-      <div class="brand-item">
-        <img src="assets/midia/pizzas.png" alt="Logo da pizza">
-        <p class="brand-label">Pizzas</p>
-      </div>
-      <div class="brand-item">
-        <img src="assets/midia/esfihas.png" alt="Logo da esfiha">
-        <p class="brand-label">Esfihas</p>
-      </div>
-      <div class="brand-item">
-        <img src="assets/midia/sobremesas.png" alt="Logo da sobremesa">
-        <p class="brand-label">Sobremesas</p>
+    <section class="container">
+      <div class="produtos">
+        <div class="card">
+          <img src="assets/midia/card1.png" alt="Produto 1">
+          <p class="card-text">Rodízio de Pizza</p>
+          <p class="card-subtitle">Rodizio de Pizza de segunda a domingo!</p>
+        </div>
+        <div class="card">
+          <img src="assets/midia/card2.png" alt="Produto 2">
+          <p class="card-text">Entrega grátis</p>
+          <p class="card-subtitle">Peça online e aproveite!</p>
+        </div>
+        <div class="card">
+          <img src="assets/midia/card3.png" alt="Produto 3">
+          <p class="card-text">Reservas online</p>
+          <p class="card-subtitle">Faça sua reserva online agora mesmo!</p>
+        </div>
       </div>
     </section>
+
   </main>
   <script src="js/main.js"></script>
 </body>

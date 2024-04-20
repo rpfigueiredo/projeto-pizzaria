@@ -1,4 +1,8 @@
+/* Importação de fontes */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+
 
 /* Cores do tema */
 :root {
@@ -17,61 +21,209 @@
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
 body {
     min-height: 100vh;
-    background-color: var(--color-bg);
 }
 
 /* Cabeçalho */
 .header {
     position: absolute;
-    top: 0;
-    left: 0;
+    background: linear-gradient(to bottom, #000000, #000000e0, #000000be, #0000008e, #00000060, transparent);
     width: 100%;
-    padding: 20px 100px;
-    background: transparent;
+    z-index: 2;
+}
+
+.nav {
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    padding: 20px 100px;
+    position: relative; /* Adicionado */
 }
 
 .logo img {
-    height: 40%;
-    width: 20%;
+    max-width: 7rem;
+    height: auto;
 }
 
-.navbar a {
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin-inline: auto;
+    justify-content: center;
+}
+
+
+.nav-list i {
+    font-size: 1.0vw; /* Altere o tamanho do ícone para ser proporcional ao texto */
+    margin-right: 10px;
+}
+
+
+.nav-list a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 1.2vw;
     position: relative;
-    font-size: 18px;
-    color: var(--color-primary);
-    font-weight: 500;
+    color: #ffbd58;
     text-decoration: none;
-    margin-left: 40px;
+    margin-right: 25px;
 }
 
-.navbar a::before {
+.nav-list li:not(:last-child) a::after {
     content: '';
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    transition: .3s;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50px;
+    background-image: linear-gradient(to bottom, transparent 5%, #ff9c08 50%, transparent 100%);
 }
 
-.navbar a:hover::before {
+.nav-list a::before {
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ffbd58;
+    transition: .5s;
+}
+
+.nav-list a:hover::before {
     width: 100%;
 }
 
-.cart-icon {
-    color: var(--color-text);
+.icons {
+    display: flex;
+    gap: 30px;
+}
+
+.icons i {
+    color: #ffbd58;
     font-size: 18px;
     text-decoration: none;
 }
 
-.cart-icon:hover {
-    color: var(--color-hover);
+.icons i:hover {
+    color: #ddd;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #ffbd58;
+    cursor: pointer;
+}
+
+.hamburger::after,
+.hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #ffbd58;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.1s;
+}
+
+@media (max-width: 750px) {
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav {
+        padding: 15px 20px;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #f1636a;
+        clip-path: circle(20px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: center; /* Alterado para centralizar os itens */
+        align-items: center;
+        gap: 50px;
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 30px;
+        opacity: 0;
+        display: flex; /* Adicionado */
+        align-items: center; /* Adicionado */
+    }
+
+    .nav-list i {
+        font-size: 5.2vw; 
+        margin-top: 5px;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.8s; 
+    }
+    
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 65px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    .nav-list li:not(:last-child) a::after {
+        display: none;
+    }
+
+    .nav-list a {
+        margin: 0;
+    }
 }
 
 /* Banner */
@@ -108,38 +260,118 @@ body {
 }
 
 /* Marcas de imagem */
-.brand-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.brand-item {
-    display: flex;
-    align-items: center;
-    flex-direction: row; /* Alterado para linha para alinhar imagem e texto horizontalmente */
-    justify-content: center;
-    width: 30%;
-    transition: background-color 0.3s ease;
-    margin: auto;
-    text-align: center;
+.container {
+    margin: 70px; /* Ajuste o valor conforme necessário */
+
+  }
+  
+  .produtos {
+    display: flex; /* Alinha os cards lado a lado */
+    justify-content: space-between; /* Espaço igual entre os cards */
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    filter: brightness(70%); /* Reduz o brilho da imagem em 70% permanentemente */
+  }
+  .card {
     position: relative;
-}
+    margin: 1rem;
+    max-width: 55rem; /* Ajuste o valor conforme necessário */
+    transition: transform .4s ease-in-out; /* Animação suave */
+    overflow: hidden; /* Para garantir que o efeito não ultrapasse os limites do card */
+  }
+  .card-text {
+    font-family: 'Changa One', cursive;
+    position: absolute;
+    bottom: 20%; /* Ajuste este valor para mover o texto para cima */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-right: 6px;
+    padding-bottom: 2px;
+    width: 100%;
+    color: #ffffff; /* Cor do texto */
+    font-style: italic; /* Itálico */
+    font-size: 2.5em; /* Tamanho da fonte */
+    /* ...outras propriedades... */
+  }
 
-.brand-item:hover {
-    background-color: var(--color-hover); 
-}
+  .card-subtitle {
+    position: absolute;
+    top: 78%; /* Ajuste este valor para mover o subtítulo para baixo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #ffffff; /* Cor do texto */
+    font-size: 1.0em; /* Tamanho da fonte */
+    /* ...outras propriedades... */
+  }
+  
+  .card:hover {
+    transform: scale(1.04); /* Zoom menor */
+  }
 
-.brand-container img {
-    width: 25%;
-    margin-right: 10px; /* Adiciona uma pequena margem à direita da imagem */
-}
+  /* Regras para telas com largura máxima de 600px */
+@media (max-width: 600px) {
 
-.brand-label {
-    font-size: 30px;
-    color: var(--color-secondary);
-}
+    .container{
+        margin-top: 25px;
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+    .produtos {
+      flex-direction: column; /* Empilha os cards verticalmente */
+    }
+  
+    .card {
+        position: relative;
+        max-width: none; /* Remove a largura máxima para permitir que os cards preencham a largura total */
+        transition: none; /* Remove a animação */
+      }
+      .card:hover {
+        transform: none; /* Remove o zoom */
+        box-shadow: none; /* Remove a sombra */
+      }
 
+      .card-text{
+        padding: 10px;
+      }
+      .card-subtitle{
+        padding: 10px;
+      }
+    }
+  
+    @media (max-width: 1024px) {
+
+        .container{
+            margin-top: 25px;
+            margin-right: 1px;
+            margin-left: 1px;
+        }
+
+        .produtos {
+            display: flex;
+            flex-direction: column; /* Empilha os cards verticalmente */
+            align-items: center; /* Centraliza os cards horizontalmente */
+            justify-content: center; /* Centraliza os cards verticalmente */
+          }
+      
+        .card {
+            position: relative;
+            max-width: auto; /* Remove a largura máxima para permitir que os cards preencham a largura total */
+            transition: none; /* Remove a animação */
+            width: 90%; 
+          }
+          .card:hover {
+            transform: none; /* Remove o zoom */
+            box-shadow: none; /* Remove a sombra */
+          }
+        }
+  
 
 /* Estilos para a imagem de sobreposição */
 .overlay-image {
@@ -151,38 +383,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
-
 /* Estilos para telas menores */
 @media (max-width: 600px) {
-    /* Seu CSS para telas menores aqui */
-
-    /* Centralizar imagem em telas menores */
     .brand-item {
         align-items: center;
-    }
-}
-
-/* Estilos para telas menores */
-@media (max-width: 600px) {
-    .header {
-        align-items: center;
-        padding: 20px;
-    }
-
-    .logo img {
-        height: 25%;
-        width: 25%;
-    }
-
-    .navbar {
-        position: relative;
-    }
-
-    .navbar a {
-        position: absolute;
-        top: 0;
-        right: 20px;
-        transform: translateY(-50%);
     }
 
     .brand-container {
@@ -199,44 +403,7 @@ body {
     }
 }
 
-@media (max-width: 1024px) {
-    .header {
-        align-items: center;
-        padding: 20px;
-    }
-
-    .logo img {
-        height: 25%;
-        width: 25%;
-    }
-
-    .navbar {
-        position: relative;
-    }
-
-    .navbar a {
-        position: absolute;
-        top: 0;
-        right: 20px;
-        transform: translateY(-50%);
-    }
-
-    .brand-container {
-        flex-direction: row;
-    }
-
-    .brand-item {
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-
-    .brand-container img {
-        width: 55%;
-    }
-}
-
 /* Ajustes de tamanho e posicionamento da imagem de sobreposição em diferentes tamanhos de tela */
-
 @media (min-width: 1700px) {
     .overlay-image {
         width: 100%;
