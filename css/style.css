@@ -1,7 +1,9 @@
 /* Importação de fontes */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap");
+
 
 
 /* Cores do tema */
@@ -18,7 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Changa One", cursive; 
 }
 
 a {
@@ -284,7 +286,6 @@ body {
     overflow: hidden; /* Para garantir que o efeito não ultrapasse os limites do card */
   }
   .card-text {
-    font-family: 'Changa One', cursive;
     position: absolute;
     bottom: 20%; /* Ajuste este valor para mover o texto para cima */
     left: 50%;
@@ -383,25 +384,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Estilos para telas menores */
-@media (max-width: 600px) {
-    .brand-item {
-        align-items: center;
-    }
-
-    .brand-container {
-        flex-direction: column;
-    }
-
-    .brand-item {
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-
-    .brand-container img {
-        width: 95%;
-    }
-}
 
 /* Ajustes de tamanho e posicionamento da imagem de sobreposição em diferentes tamanhos de tela */
 @media (min-width: 1700px) {
@@ -448,3 +430,228 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+.menu-section {
+    text-align: center;
+  }
+  
+  .menu-header {
+    padding: 50px 0; /* Adiciona algum espaço ao redor do texto */
+  }
+  
+  .menu-text {
+    font-size: 54px; /* Ajusta o tamanho da fonte */
+    margin: 0; /* Remove margens padrão */
+    color: #2b2c2f;
+    font-weight: 1;
+  }
+  
+  .menu-buttons {
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  margin-top: 40px; /* Ajuste conforme necessário */
+}
+
+.menu-button.selected {
+    color: #FF7F00; /* Cor do texto selecionado */
+    border-color: #FF7F00; /* Cor da borda selecionada */
+  }
+  
+
+.menu-button {
+    background-color: transparent;
+    border: 2px solid #e2e3eb; /* Cor da borda inicial */
+    border-radius: 20px; /* Bordas arredondadas */
+    color: #e2e3eb; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 20px; /* Tamanho do texto */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transição suave */
+    margin: 0 10px; /* Espaçamento entre os botões */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-weight: 600;
+  }
+.menu-button:hover {
+  color: #FF7F00; /* Cor do texto ao passar o mouse */
+  border-color: #FF7F00; /* Cor da borda ao passar o mouse */
+}
+
+.menu-button:hover:not(.selected) {
+    color: #FF7F00; /* Cor do texto ao passar o mouse */
+    border-color: #FF7F00; /* Cor da borda ao passar o mouse */
+  }
+
+.menu-button:focus {
+  outline: none; /* Remove a borda de foco padrão */
+}
+
+.menu-button:active {
+  background-color: #FF7F00; /* Cor de fundo ao clicar */
+  color: #fff; /* Cor do texto ao clicar */
+  border-color: #FF7F00; /* Cor da borda ao clicar */
+}
+
+
+
+.menu-card {
+    width: calc(25% - 10px); /* Para garantir que haja espaço suficiente para 4 cards por linha */
+    margin-bottom: 20px; /* Espaço entre os cards */
+    background: #fff;
+    border: 1px solid #ccc; /* Borda para o card */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites do card */
+  }
+  
+  .pizza-image {
+    width: 85%; /* Para garantir que a imagem ocupe toda a largura do card */
+    height: auto; /* Para manter a proporção da imagem */
+    margin: 10px;
+  }
+
+
+
+  
+
+  .pizza-content {
+    border-bottom: 1px solid #ccc; /* Adicione a cor da linha que desejar */
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .icon-plus {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 25px;
+    background-color: #F16369;
+    border: 2px solid #F16369;
+    border-radius: 90%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+
+
+  }
+  
+  .icon-plus:hover {
+    background-color: #ee363f;
+    color: white;
+  }
+  
+  
+  
+  .pizza-info {
+    padding: 10px; /* Espaçamento interno para o conteúdo do card */
+
+  }
+  .pizza-price{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+  }
+  .pizza-title {
+    margin-bottom: 5px; /* Espaço entre o título e a descrição */
+    font-size: 25px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+  }
+  
+  .pizza-description {
+    margin-bottom: 10px; /* Espaço entre a descrição e o botão */
+    font-family: 'Barlow Condensed', sans-serif;
+
+  }
+  
+  .buy-button {
+    background-color: #FF7F00; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 8px 12px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 4px; /* Bordas arredondadas do botão */
+    cursor: pointer; /* Cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+  }
+  
+  .buy-button:hover {
+    background-color: #E56C00; /* Cor de fundo do botão ao passar o mouse */
+  }
+  
+  .menu-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .menu-card {
+    flex: 0 0 calc(25% - 40px); /* Isso faz com que cada card ocupe 25% do espaço disponível na linha, menos 40px para a margem */
+    max-width: 300px; /* Isso define uma largura máxima para os cards */
+    margin: 15px; /* Isso adiciona uma margem ao redor de cada card */
+  }
+  
+  .card img{
+    margin: 10px;
+    
+  }
+
+  @media (max-width: 768px) {
+    .menu-card {
+      flex: 0 0 calc(100% - 30px); /* Ocupa 100% da largura disponível, menos a margem */
+      max-width: calc(100% - 30px); /* Define a largura máxima para 100% da largura disponível, menos a margem */
+    }
+  }
+  
+
+  /* Estilos para o footer */
+.footer {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto branco */
+    padding: 50px 0; /* Espaçamento interno */
+  }
+  
+  .container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centralizar o container */
+    padding: 0 20px; /* Espaçamento interno do container */
+  }
+  
+  .footer-links {
+    display: flex; /* Layout em linha para os grupos de links */
+    justify-content: center; /* Distribuição uniforme dos grupos de links */
+  }
+  
+  .footer-link-group {
+    flex: 1; /* Cada grupo de link ocupa a mesma largura */
+  }
+  
+  .footer-link-group h3 {
+    font-size: 20px; /* Tamanho da fonte do título */
+    margin-bottom: 15px; /* Espaçamento inferior */
+  }
+  
+  .footer-link-group ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    padding: 0; /* Remover espaçamento interno da lista */
+  }
+  
+  .footer-link-group ul li {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+  }
+  
+  .footer-link-group ul li a {
+    color: #fff; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado padrão dos links */
+  }
+  
+  .footer-link-group ul li a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre os links */
+  }
+  
+  /* Estilos para os ícones de redes sociais */
+  .footer-link-group ul li a i {
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+  }
+  
